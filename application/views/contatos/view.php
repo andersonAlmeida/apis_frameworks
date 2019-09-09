@@ -1,4 +1,7 @@
-<?php
-    echo '<h2>'.$contatos_item['nome'].'</h2>';
-    echo $contatos_item['email'];
-    echo $contatos_item['telefone'];
+<?php ?>
+
+<p><?php echo $contatos_item['nome']; ?></h2>
+<p><?php echo $contatos_item['email']; ?></p>
+<p><?php echo $contatos_item['telefone']; ?></p>
+    
+    

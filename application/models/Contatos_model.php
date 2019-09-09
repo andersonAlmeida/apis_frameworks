@@ -27,4 +27,21 @@
 
 			return $this->db->insert('contato', $data);
         }
+
+        public function update_contato()
+        {
+            $id = $this->input->post('id');
+			$data = array(
+					'nome' => $this->input->post('nome'),
+					'telefone' => $this->input->post('telefone'),
+					'email' => $this->input->post('email')
+			);
+
+			return $this->db->where('id', $id)->update('contato', $data);
+        }
+
+        public function delete_contato($id) 
+        {
+			return $this->db->where('id', $id)->delete('contato');
+        }
     }
