@@ -10,14 +10,21 @@
 </head>
 <body>
 
+    <?php
+        // $this->load->helper('url');
+        $currentURL = current_url();
+        $page = preg_match("/.\/contatos(\/)?$/", $currentURL);  
+        print_r($page); 
+    ?>
+
 <header id="main_header">
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <nav id="main_nav">
-                    <ul>
-                        <li><a href="<?php echo site_url()?>" target="_self">Home</a></li>
-                        <li><a href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
+                <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-light">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
                     </ul>
                 </nav>
             </div>
