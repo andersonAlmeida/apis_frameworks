@@ -10,11 +10,9 @@
 </head>
 <body>
 
-    <?php
-        // $this->load->helper('url');
-        $currentURL = current_url();
-        $page = preg_match("/.\/contatos(\/)?$/", $currentURL);  
-        print_r($page); 
+    <?php        
+        $currentURL = current_url();    
+        // $regex =     
     ?>
 
 <header id="main_header">
@@ -23,8 +21,8 @@
             <div class="col-sm">
                 <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
+                        <li class="nav-item <?php echo preg_match_all('/(\/)?$/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
+                        <li class="nav-item <?php echo preg_match_all('/.\/contatos(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
                     </ul>
                 </nav>
             </div>
