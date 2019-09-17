@@ -23,6 +23,13 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item <?php echo preg_match_all('/(\/)?$/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
                         <li class="nav-item <?php echo preg_match_all('/.\/contatos(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
+                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Usuários</a></li>
+                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Pedidos</a></li>
+                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Fornecedores</a></li>
+
+                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Produtos</a></li>
+
+                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Categorias</a></li>
                     </ul>
                 </nav>
             </div>
