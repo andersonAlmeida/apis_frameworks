@@ -61,6 +61,14 @@ $route['contatos/create'] = 'contatos/create';
 $route['contatos/(:any)'] = 'contatos/view/$1';
 $route['contatos'] = 'contatos';
 
+$route['administrador/create'] = 'administrador/create';
+$route['administrador/(:any)'] = 'administrador/view/$1';
+$route['administrador'] = 'administrador';
+
+$route['funcao/create'] = 'funcao/create';
+$route['funcao/(:any)'] = 'funcao/view/$1';
+$route['funcao'] = 'funcao';
+
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'contatos/';
 

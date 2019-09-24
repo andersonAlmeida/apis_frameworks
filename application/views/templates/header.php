@@ -7,12 +7,12 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?php echo base_url();?>_assets/libs/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>_assets/custom/css/custom.css">
 </head>
 <body>
 
     <?php        
-        $currentURL = current_url();    
-        // $regex =     
+        $currentURL = uri_string();
     ?>
 
 <header id="main_header">
@@ -21,15 +21,15 @@
             <div class="col-sm">
                 <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item <?php echo preg_match_all('/(\/)?$/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
-                        <li class="nav-item <?php echo preg_match_all('/.\/contatos(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
-                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Usuários</a></li>
-                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Pedidos</a></li>
-                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Fornecedores</a></li>
+                        <li class="nav-item <?php echo $currentURL === "" ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>" target="_self">Home</a></li>
+                        <li class="nav-item <?php echo preg_match('/funcao(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>funcao/" target="_self">Funções</a></li>
+                        <li class="nav-item <?php echo preg_match('/contatos(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Contatos</a></li>
+                        <li class="nav-item <?php echo preg_match('/administrador(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>administrador/" target="_self">Administrador</a></li>
+                        <li class="nav-item <?php echo preg_match('/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Fornecedores</a></li>
 
-                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Produtos</a></li>
+                        <li class="nav-item <?php echo preg_match('/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Produtos</a></li>
 
-                        <li class="nav-item <?php echo preg_match_all('/.\/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Categorias</a></li>
+                        <li class="nav-item <?php echo preg_match('/usuarios(\/)?/', $currentURL) > 0 ? "active" : "" ?>"><a class="nav-link" href="<?php echo site_url()?>contatos/" target="_self">Categorias</a></li>
                     </ul>
                 </nav>
             </div>
