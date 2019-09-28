@@ -1,7 +1,8 @@
 <?php
     class Contatos extends CI_Controller {
         public function __construct() {
-            parent::__construct();
+			parent::__construct();
+			check_session();
             $this->load->model('contatos_model');
             $this->load->helper('url_helper');
         }
@@ -31,12 +32,12 @@
 			$this->load->view('contatos/view', $data);
 			$this->load->view('templates/footer');
 		}
-		
+
 		public function edit($id = NULL)
 		{
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			
+
 			$data['contatos_item'] = $this->contatos_model->get_contatos($id);
 
 			if (empty($data['contatos_item']))
@@ -63,9 +64,9 @@
 				$this->load->view('contatos/success');
 			}
 		}
-		
+
 		public function delete($id) {
-			
+
 			if (empty($id))
 			{
 				show_404();
@@ -74,7 +75,7 @@
 			$this->contatos_model->delete_contato($id);
 			$this->load->view('contatos/success');
 		}
-        
+
         public function create()
 		{
 			$this->load->helper('form');

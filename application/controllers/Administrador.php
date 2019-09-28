@@ -2,14 +2,16 @@
     class Administrador extends CI_Controller {
         public function __construct() {
             parent::__construct();
-            $this->load->model('administrador_model');            
-            $this->load->helper('url_helper');
+			check_session();
+			$this->load->model('administrador_model');
+            $this->load->helper('url');
         }
 
         public function index()
 		{
-			$data['admins'] = $this->administrador_model->get_administrador();
 			$data['title'] = 'Lista de Administradores';
+
+			$data['admins'] = $this->administrador_model->get_administrador();
 
 			$this->load->view('templates/header', $data);
 			$this->load->view('administrador/index', $data);
@@ -18,6 +20,9 @@
 
 		public function view($id = NULL)
 		{
+			var_dump( $id );
+			die();
+
 			$data['administrador_item'] = $this->administrador_model->get_administrador($id);
 
 			if (empty($data['administrador_item']))
@@ -31,13 +36,13 @@
 			$this->load->view('administrador/view', $data);
 			$this->load->view('templates/footer');
 		}
-		
+
 		public function edit($id = NULL)
 		{
 			$this->load->model('funcao_model');
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			
+
 			$data['administrador_item'] = $this->administrador_model->get_administrador($id);
 
 			if (empty($data['administrador_item']))
@@ -67,9 +72,9 @@
 				$this->load->view('administrador/success');
 			}
 		}
-		
+
 		public function delete($id) {
-			
+
 			if (empty($id))
 			{
 				show_404();
@@ -78,7 +83,7 @@
 			$this->administrador_model->delete_administrador($id);
 			$this->load->view('administrador/success');
 		}
-        
+
         public function create()
 		{
 			$this->load->model('funcao_model');
@@ -103,7 +108,7 @@
 			else
 			{
 				$this->administrador_model->set_administrador();
-				$this->load->view('administrador/success');
+				$this->load->view('administrador/index');
 			}
 		}
     }

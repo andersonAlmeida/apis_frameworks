@@ -4,6 +4,7 @@
 		public function __construct()
 		{
 			parent::__construct();
+			check_session();
 			$this->load->model('news_model');
 			$this->load->helper('url_helper');
 		}

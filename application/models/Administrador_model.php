@@ -1,7 +1,7 @@
 <?php
     class Administrador_model extends CI_Model {
         private $table_name = 'administrador';
-        
+
         public function __construct()
         {
                 $this->load->database();
@@ -13,7 +13,7 @@
             {
                 $this->db->select($this->table_name . '.*, funcao.nome as funcao_nome');
                 $this->db->from($this->table_name);
-                $this->db->join('funcao', 'funcao.id = ' . $this->table_name . '.funcao');
+                $this->db->join('funcao', 'funcao.id = ' . $this->table_name . '.id_funcao');
 
                 $query = $this->db->get();
                 return $query->result_array();
@@ -29,7 +29,7 @@
 					'nome' => $this->input->post('nome'),
 					'email' => $this->input->post('email'),
 					'senha' => $this->input->post('senha'),
-					'funcao' => $this->input->post('funcao')
+					'id_funcao' => $this->input->post('funcao')
 			);
 
 			return $this->db->insert($this->table_name, $data);
@@ -42,14 +42,24 @@
 					'nome' => $this->input->post('nome'),
 					'email' => $this->input->post('email'),
 					'senha' => $this->input->post('senha'),
-					'funcao' => $this->input->post('funcao')
+					'id_funcao' => $this->input->post('funcao')
 			);
 
 			return $this->db->where('id', $id)->update($this->table_name, $data);
         }
 
-        public function delete_administrador($id) 
+        public function delete_administrador($id)
         {
 			return $this->db->where('id', $id)->delete($this->table_name);
-        }
+		}
+
+		public function login()
+		{
+			$email = $this->input->post('email');
+			$senha = $this->input->post('senha');
+
+			$this->db->where('email', $email);
+			$this->db->where('senha', $senha);
+			return $this->db->get($this->table_name);
+		}
     }

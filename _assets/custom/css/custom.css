@@ -1,3 +1,24 @@
-.new_entry {
-    margin-bottom: 20px; 
+p {
+	margin: 0;
 }
+
+.new_entry {
+    margin-bottom: 20px;
+}
+
+.error-feedback {
+	color: #ff0000 !important;
+	text-align: left !important;
+}
+
+#main_header p, #main_header a {
+	color: #fff;
+}
+
+#main_nav .nav-link {
+	color: #fff;
+	font-size: 16px;
+}
+
+
+

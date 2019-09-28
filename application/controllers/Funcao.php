@@ -1,7 +1,8 @@
 <?php
     class Funcao extends CI_Controller {
         public function __construct() {
-            parent::__construct();
+			parent::__construct();
+			check_session();
             $this->load->model('funcao_model');
             $this->load->helper('url_helper');
         }
@@ -31,12 +32,12 @@
 			$this->load->view('funcao/view', $data);
 			$this->load->view('templates/footer');
 		}
-		
+
 		public function edit($id = NULL)
 		{
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			
+
 			$data['funcoes_item'] = $this->funcao_model->get_funcoes($id);
 
 			if (empty($data['funcoes_item']))
@@ -65,14 +66,14 @@
                 $this->load->view('templates/footer');
 			}
 		}
-		
+
 		public function delete($id) {
-			
+
 			if (empty($id))
 			{
 				show_404();
             }
-            
+
             $data['title'] = 'Função Removida';
 
 			$this->funcao_model->delete_contato($id);
@@ -80,7 +81,7 @@
             $this->load->view('funcao/success');
             $this->load->view('templates/footer');
 		}
-        
+
         public function create()
 		{
 			$this->load->helper('form');
