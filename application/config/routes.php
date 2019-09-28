@@ -71,6 +71,22 @@ $route['funcao/create'] = 'funcao/create';
 $route['funcao/(:any)'] = 'funcao/view/$1';
 $route['funcao'] = 'funcao';
 
+$route['categoria/create'] = 'categoria/create';
+$route['categoria/(:any)'] = 'categoria/view/$1';
+$route['categoria'] = 'categoria';
+
+$route['marca/create'] = 'marca/create';
+$route['marca/(:any)'] = 'marca/view/$1';
+$route['marca'] = 'marca';
+
+$route['fornecedor/create'] = 'fornecedor/create';
+$route['fornecedor/(:any)'] = 'fornecedor/view/$1';
+$route['fornecedor'] = 'fornecedor';
+
+$route['produto/create'] = 'produto/create';
+$route['produto/(:any)'] = 'produto/view/$1';
+$route['produto'] = 'produto';
+
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'login/';
 

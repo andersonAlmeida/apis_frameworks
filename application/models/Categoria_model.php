@@ -1,14 +1,14 @@
 <?php
-class Funcao_model extends CI_Model
+class Categoria_model extends CI_Model
 {
-	private $table_name = 'funcao';
+	private $table_name = 'categoria';
 
 	public function __construct()
 	{
 		$this->load->database();
 	}
 
-	public function get_funcoes($id = FALSE)
+	public function get_categorias($id = FALSE)
 	{
 		if ($id === FALSE) {
 			$query = $this->db->get($this->table_name);
@@ -19,28 +19,26 @@ class Funcao_model extends CI_Model
 		return $query->row_array();
 	}
 
-	public function set_funcoes()
+	public function set_categorias()
 	{
 		$data = array(
-			'nome' => $this->input->post('nome'),
-			'nivel' => $this->input->post('nivel')
+			'nome' => $this->input->post('nome')
 		);
 
 		return $this->db->insert($this->table_name, $data);
 	}
 
-	public function update_funcao()
+	public function update_categoria()
 	{
 		$id = $this->input->post('id');
 		$data = array(
-			'nome' => $this->input->post('nome'),
-			'nivel' => $this->input->post('nivel')
+			'nome' => $this->input->post('nome')
 		);
 
 		return $this->db->where('id', $id)->update($this->table_name, $data);
 	}
 
-	public function delete_contato($id)
+	public function delete_categoria($id)
 	{
 		return $this->db->where('id', $id)->delete($this->table_name);
 	}

@@ -50,8 +50,8 @@
 					<li><a href="<?php echo site_url()?>"> <i class="icon-home"></i>Home </a></li>
 					<li><a href="#produtos" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Produtos </a>
 						<ul id="produtos" class="collapse list-unstyled ">
-							<li><a href="#">Categorias</a></li>
-							<li><a href="#">Listar Produtos</a></li>
+							<li><a href="<?php echo site_url()?>categoria/">Categorias</a></li>
+							<li><a href="<?php echo site_url()?>produto/">Listar Produtos</a></li>
 						</ul>
 					</li>
 					<li><a href="#admin" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Administração </a>
