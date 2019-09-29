@@ -49,6 +49,10 @@
 
 			$this->form_validation->set_rules('id', 'ID', 'required');
 			$this->form_validation->set_rules('nome', 'Nome', 'required');
+            $this->form_validation->set_rules('cnpj', 'CNPJ', 'required');
+            $this->form_validation->set_rules('razao_social', 'Razão Social', 'required');
+            $this->form_validation->set_rules('nome_telefone', 'Identificação do Telefone', 'required');
+            $this->form_validation->set_rules('numero', 'Número', 'required');
 
 			if ($this->form_validation->run() === FALSE)
 			{

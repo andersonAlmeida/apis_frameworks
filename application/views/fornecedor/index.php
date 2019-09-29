@@ -17,7 +17,7 @@
                 foreach ($fornecedores as $fornecedor): ?>
                 <tr>
                     <td><?php echo $i; $i++;?></td>
-                    <td><?php echo $fornecedor['nome']; ?></td>
+                    <td><a class="view-details-link" href="<?php echo site_url('fornecedor/view/'.$fornecedor['id']); ?>"><span class="icon icon-search"></span> <?php echo $fornecedor['nome']; ?></a></td>
                     <td><?php echo $fornecedor['telefone']; ?></td>
                     <td>
                         <a href="<?php echo site_url('fornecedor/edit/'.$fornecedor['id']); ?>">Editar</a> /
