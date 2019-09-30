@@ -68,7 +68,7 @@ class Produto extends CI_Controller
 			$path = $_FILES['imagem']['name'];
 			$ext = pathinfo($path, PATHINFO_EXTENSION);
 			$image = "produto-" . time() . '.' . $ext;
-			$config['upload_path']          = base_url() . '/_assets/uploads/';
+			$config['upload_path']          = base_url() . '_assets/uploads/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 300;
 			$config['max_width']            = 1024;
@@ -139,7 +139,7 @@ class Produto extends CI_Controller
 			$path = $_FILES['imagem']['name'];
 			$ext = pathinfo($path, PATHINFO_EXTENSION);
 			$image = "produto-" . time() . '.' . $ext;
-			$config['upload_path']          = base_url() . '/_assets/uploads/';
+			$config['upload_path']          = base_url() . '_assets/uploads/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 300;
 			$config['max_width']            = 1024;
@@ -147,6 +147,9 @@ class Produto extends CI_Controller
 			$config['file_name']            = $image;
 			$this->load->library('upload', $config);
 			// fim da configuração de upload
+
+			// var_dump($config['file_name']);
+			// die();
 
 			if (!$this->upload->do_upload('imagem')) {
 				// var_dump($this->upload->data());
