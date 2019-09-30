@@ -68,7 +68,7 @@ class Produto extends CI_Controller
 			$path = $_FILES['imagem']['name'];
 			$ext = pathinfo($path, PATHINFO_EXTENSION);
 			$image = "produto-" . time() . '.' . $ext;
-			$config['upload_path']          = base_url() . '_assets/uploads/';
+			$config['upload_path']          = '_assets/uploads/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 300;
 			$config['max_width']            = 1024;
@@ -139,7 +139,7 @@ class Produto extends CI_Controller
 			$path = $_FILES['imagem']['name'];
 			$ext = pathinfo($path, PATHINFO_EXTENSION);
 			$image = "produto-" . time() . '.' . $ext;
-			$config['upload_path']          = base_url() . '_assets/uploads/';
+			$config['upload_path']          = '_assets/uploads/';
 			$config['allowed_types']        = 'jpg|png';
 			$config['max_size']             = 300;
 			$config['max_width']            = 1024;
