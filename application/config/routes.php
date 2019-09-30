@@ -53,6 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;
 
+
+
 $route['login'] = 'login/login';
 $route['home'] = 'welcome';
 
@@ -85,10 +87,9 @@ $route['fornecedor/(:any)'] = 'fornecedor/view/$1';
 $route['fornecedor'] = 'fornecedor';
 
 $route['produto/create'] = 'produto/create';
-// $route['produto/delete_img/(:any)/:num/:num'] = 'produto/delete_img/$1/$2/$3';
 $route['produto/(:any)'] = 'produto/view/$1';
 $route['produto'] = 'produto';
 
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'login/';
+$route['default_controller'] = 'login/login';
 
