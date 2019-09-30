@@ -20,9 +20,6 @@
 
 		public function view($id = NULL)
 		{
-			var_dump( $id );
-			die();
-
 			$data['administrador_item'] = $this->administrador_model->get_administrador($id);
 
 			if (empty($data['administrador_item']))
@@ -69,7 +66,9 @@
 			else
 			{
 				$this->administrador_model->update_administrador($id);
+				$this->load->view('templates/header', $data);
 				$this->load->view('administrador/success');
+				$this->load->view('templates/footer');
 			}
 		}
 
@@ -81,7 +80,7 @@
 			}
 
 			$this->administrador_model->delete_administrador($id);
-			$this->load->view('administrador/success');
+			redirect('administrador/');
 		}
 
         public function create()
@@ -108,7 +107,9 @@
 			else
 			{
 				$this->administrador_model->set_administrador();
-				$this->load->view('administrador/index');
+				$this->load->view('templates/header', $data);
+				$this->load->view('administrador/success');
+				$this->load->view('templates/footer');
 			}
 		}
     }

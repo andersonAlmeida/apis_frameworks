@@ -60,6 +60,9 @@
 
 			$this->db->where('email', $email);
 			$this->db->where('senha', $senha);
-			return $this->db->get($this->table_name);
+			$this->db->select($this->table_name . '.*, funcao.nome as funcao');
+			$this->db->from($this->table_name);
+			$this->db->join('funcao', 'funcao.id = ' . $this->table_name . '.id_funcao');
+			return $this->db->get();
 		}
     }

@@ -54,6 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'login/login';
+$route['home'] = 'welcome';
 
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
@@ -84,6 +85,7 @@ $route['fornecedor/(:any)'] = 'fornecedor/view/$1';
 $route['fornecedor'] = 'fornecedor';
 
 $route['produto/create'] = 'produto/create';
+// $route['produto/delete_img/(:any)/:num/:num'] = 'produto/delete_img/$1/$2/$3';
 $route['produto/(:any)'] = 'produto/view/$1';
 $route['produto'] = 'produto';
 

@@ -45,7 +45,13 @@
 					<?php echo form_error('desconto', '<p class="error-feedback">'); ?>
 				</div>
 			</div>
-			<!-- Telefone -->
+			<div class="row">
+				<div class="form-group col-6">
+				<label for="estoque">Quantidade em Estoque</label>
+					<input class="form-control" type="number" min="0" name="estoque" placeholder="Quantidade total em estoque"/>
+					<?php echo form_error('estoque', '<p class="error-feedback">'); ?>
+				</div>
+			</div>
 			<fieldset>
 				<legend>Imagens</legend>
 

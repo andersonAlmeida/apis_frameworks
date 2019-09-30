@@ -38,7 +38,7 @@
 			<div class="sidenav-header d-flex align-items-center justify-content-center">
 				<!-- User Info-->
 				<div class="sidenav-header-inner text-center"><img src="<?php echo base_url(); ?>_assets/theme/img/avatar-7.jpg" alt="person" class="img-fluid rounded-circle">
-					<h2 class="h5"><?php echo $_SESSION['nome']; ?></h2><span>Web Developer</span>
+					<h2 class="h5"><?php echo $_SESSION['nome']; ?></h2><span><?php echo $_SESSION['funcao_nome']; ?></span>
 				</div>
 				<!-- Small Brand information, appears on minimized sidebar-->
 				<div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -47,21 +47,25 @@
 			<div class="main-menu">
 				<h5 class="sidenav-heading">Menu</h5>
 				<ul id="side-main-menu" class="side-menu list-unstyled">
-					<li><a href="<?php echo site_url()?>"> <i class="icon-home"></i>Home </a></li>
+					<li><a href="<?php echo site_url()?>home"> <i class="icon-home"></i>Home </a></li>
 					<li><a href="#produtos" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Produtos </a>
 						<ul id="produtos" class="collapse list-unstyled ">
 							<li><a href="<?php echo site_url()?>categoria/">Categorias</a></li>
 							<li><a href="<?php echo site_url()?>produto/">Listar Produtos</a></li>
 						</ul>
 					</li>
+					<?php if ($_SESSION['funcao'] < 3) { ?>
 					<li><a href="#admin" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Administração </a>
 						<ul id="admin" class="collapse list-unstyled ">
+							<?php if ($_SESSION['funcao'] == 1) { ?>
 							<li><a href="<?php echo site_url()?>administrador/">Usuários</a></li>
+							<?php } ?>
 							<li><a href="<?php echo site_url()?>funcao/">Funções</a></li>
 							<li><a href="<?php echo site_url()?>fornecedor/">Fornecedores</a></li>
 							<li><a href="<?php echo site_url()?>marca/">Marcas</a></li>
 						</ul>
 					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

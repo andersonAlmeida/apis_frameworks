@@ -1,18 +1,20 @@
 <div class="row">
 	<div class="col-12">
-		<p><strong>Razão Social:</strong> <?php echo $fornecedor_item['razao_social']; ?></p>
-		<p><strong>Nome Fantasia:</strong> <?php echo $fornecedor_item['nome']; ?></p>
-		<p><strong>CNPJ:</strong> <?php echo $fornecedor_item['cnpj']; ?></p>
-		<p><strong>Telefone:</strong> <?php echo $fornecedor_item['telefone']; ?></p>
-		<p><strong>Endereço:</strong>
-			<?php echo $fornecedor_item['logradouro'] . ", "
-			. $fornecedor_item['numero'] . " - "
-			. $fornecedor_item['bairro'] . ", "
-			. $fornecedor_item['cidade'] . " - "
-			. $fornecedor_item['estado'] . ", "
-			. $fornecedor_item['cep']
-			?>
-		</p>
-		<a class="btn btn-primary mt-3" href="<?php echo site_url('fornecedor/edit/'.$fornecedor_item['id']); ?>"><span class="icon icon-form"></span> Editar</a>
+		<?php if ($produto_item['imagem']) { ?>
+			<div class="row mb-4">
+				<div class="col-6">
+					<figure class="figure">
+						<img src="<?php echo base_url() . "_assets/uploads/" . $produto_item['imagem']; ?>" class="figure-img img-fluid rounded" alt="">
+					</figure>
+				</div>
+			</div>
+		<?php } ?>
+		<p><strong>Nome:</strong> <?php echo $produto_item['nome']; ?></p>
+		<p><strong>Marca:</strong> <?php echo $produto_item['marca']; ?></p>
+		<p><strong>Categoria:</strong> <?php echo $produto_item['categoria']; ?></p>
+		<p><strong>Preço:</strong> <?php echo $produto_item['preco']; ?></p>
+		<p><strong>Desconto:</strong> <?php echo $produto_item['desconto']; ?></p>
+		<p><strong>Quantidade em estoque:</strong> <?php echo $produto_item['estoque']; ?></p>
+		<a class="btn btn-primary mt-3" href="<?php echo site_url('produto/edit/'.$produto_item['id']); ?>"><span class="icon icon-form"></span> Editar</a>
 	</div>
 </div>

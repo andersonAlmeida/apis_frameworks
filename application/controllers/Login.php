@@ -35,12 +35,13 @@
 						'nome'  => $row->nome,
 						'email'     => $row->email,
 						'funcao' => $row->id_funcao,
+						'funcao_nome' => $row->funcao,
 						'logado' => TRUE
 					);
 
 					$this->session->set_tempdata($newsession, NULL, $this->expires);
 
-					redirect('/administrador', 'location');
+					redirect('/home', 'location');
 				} else
 				{
 					$data['login_not_found'] = TRUE;
