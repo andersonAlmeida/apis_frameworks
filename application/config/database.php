@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=apis_e_frameworks_2019-2-n',
-	'hostname' => 'localhost',
-	'username' => 'postgres',
-	'password' => 'postgres',
-	'database' => 'apis_e_frameworks_2019-2-n',
+	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=dal0v7te5lb4ms',
+	'hostname' => 'ec2-107-22-160-185.compute-1.amazonaws.com',
+	'username' => 'bdmueihigievke',
+	'password' => '892793a6f6dce1cc72ff8d20ee8e5d735fda690805eee700efa4248c4b2dc2f7',
+	'database' => 'dal0v7te5lb4ms',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,3 +94,24 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+// $db['default'] = array(
+// 	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=apis_e_frameworks_2019-2-n',
+// 	'hostname' => 'localhost',
+// 	'username' => 'postgres',
+// 	'password' => 'postgres',
+// 	'database' => 'apis_e_frameworks_2019-2-n',
+// 	'dbdriver' => 'pdo',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
