@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"compile": [
-			"chmod -R 777 _assets/uploads/",
+			"chmod 777 _assets/uploads/",
 			"chmod 755 etc/",
 			"chmod 644 etc/config.php"
 		]
