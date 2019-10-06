@@ -1,6 +1,7 @@
 <?php
     class Administrador_model extends CI_Model {
         private $table_name = 'administrador';
+        private $table_resetpass = 'resetar_senha';
 
         public function __construct()
         {
@@ -28,7 +29,7 @@
 			$data = array(
 					'nome' => $this->input->post('nome'),
 					'email' => $this->input->post('email'),
-					'senha' => $this->input->post('senha'),
+					'senha' => password_hash($this->input->post('senha'), PASSWORD_DEFAULT),
 					'id_funcao' => $this->input->post('funcao')
 			);
 
@@ -41,7 +42,7 @@
 			$data = array(
 					'nome' => $this->input->post('nome'),
 					'email' => $this->input->post('email'),
-					'senha' => $this->input->post('senha'),
+					'senha' => password_hash($this->input->post('senha'), PASSWORD_DEFAULT),
 					'id_funcao' => $this->input->post('funcao')
 			);
 
@@ -56,13 +57,28 @@
 		public function login()
 		{
 			$email = $this->input->post('email');
-			$senha = $this->input->post('senha');
+			// $senha = password_hash($this->input->post('senha'), PASSWORD_DEFAULT);
 
 			$this->db->where('email', $email);
-			$this->db->where('senha', $senha);
+			// $this->db->where('senha', $senha);
 			$this->db->select($this->table_name . '.*, funcao.nome as funcao');
 			$this->db->from($this->table_name);
 			$this->db->join('funcao', 'funcao.id = ' . $this->table_name . '.id_funcao');
 			return $this->db->get();
+		}
+
+		public function saveToken($token, $email)
+		{
+			date_default_timezone_set('America/Sao_Paulo');
+			$data = array(
+				'email' => $email,
+				'token' => $token,
+				'criado_em' => date('d/m/Y H:i:s')
+			);
+
+			var_dump($data);
+			die();
+
+			return $this->db->insert($this->table_name, $data);
 		}
     }

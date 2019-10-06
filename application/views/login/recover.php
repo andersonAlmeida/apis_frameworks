@@ -32,24 +32,19 @@
 				<div class="form-inner">
 					<div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-					<?php echo form_open('login/login'); ?>
+					<?php echo form_open('login/recover'); ?>
 						<div class="form-group-material">
 							<input type="email" name="email" class="input-material" id="email">
 							<label class="label-material" for="email">Endereço de email</label>
 							<?php echo form_error('email', '<p class="error-feedback">'); ?>
 						</div>
-						<div class="form-group-material">
-							<input type="password" name="senha" class="input-material" id="senha">
-							<label class="label-material" for="senha">Senha</label>
-							<?php
-								echo form_error('senha', '<p class="error-feedback">');
-								if ($login_not_found === TRUE) {
-									echo '<p class="error-feedback">Usuário ou senha incorretos.</p>';
-								}
-							?>
-						</div>
 						<button type="submit" class="btn btn-primary">Enviar</button>
-					</form><a href="<?php echo base_url(); ?>login/recover/" class="forgot-pass">Esqueci minha senha.</a>
+					</form><a href="<?php echo base_url(); ?>login/" class="forgot-pass">Voltar</a>
+					<?php
+					if ($login_not_found === TRUE) {
+						echo '<p class="error-feedback">Usuário ou senha incorretos.</p>';
+					}
+					?>
 				</div>
 				<div class="copyrights text-center">
 					<p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>

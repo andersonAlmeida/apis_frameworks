@@ -37,7 +37,7 @@
 			<!-- Sidebar Header    -->
 			<div class="sidenav-header d-flex align-items-center justify-content-center">
 				<!-- User Info-->
-				<div class="sidenav-header-inner text-center"><img src="<?php echo base_url(); ?>_assets/theme/img/avatar-7.jpg" alt="person" class="img-fluid rounded-circle">
+				<div class="sidenav-header-inner text-center"><img src="<?php echo base_url(); ?>_assets/theme/img/avatar-8.jpg" alt="person" class="img-fluid rounded-circle">
 					<h2 class="h5"><?php echo $_SESSION['nome']; ?></h2><span><?php echo $_SESSION['funcao_nome']; ?></span>
 				</div>
 				<!-- Small Brand information, appears on minimized sidebar-->
