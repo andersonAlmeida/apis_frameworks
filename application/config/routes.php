@@ -55,6 +55,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+$route['login/newpass/(:any)'] = 'login/newpass/$1';
+
 $route['login'] = 'login/login';
 $route['login/recover'] = 'login/recover';
 $route['home'] = 'welcome';

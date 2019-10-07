@@ -76,9 +76,22 @@
 				'criado_em' => date('d/m/Y H:i:s')
 			);
 
-			var_dump($data);
-			die();
+			return $this->db->insert($this->table_resetpass, $data);
+		}
 
-			return $this->db->insert($this->table_name, $data);
+		public function get_new_pass_token($token)
+		{
+			$query = $this->db->get_where($this->table_resetpass, array('token' => $token));
+
+			return $query->row_array();
+		}
+
+		public function save_new_pass($email)
+		{
+			$senha = password_hash($this->input->post('senha'), PASSWORD_DEFAULT);
+
+			$this->db->set('senha', $senha);
+			$this->db->where('email', $email);
+			return $this->db->update($this->table_name);
 		}
     }
