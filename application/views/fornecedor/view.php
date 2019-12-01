@@ -13,6 +13,7 @@
 			. $fornecedor_item['cep']
 			?>
 		</p>
+		<a class="btn btn-primary mt-3 mr-2" href="<?php echo site_url('fornecedor/pedido/'.$fornecedor_item['id']); ?>"><span class="icon icon-form"></span> Fazer pedido</a>
 		<a class="btn btn-primary mt-3" href="<?php echo site_url('fornecedor/edit/'.$fornecedor_item['id']); ?>"><span class="icon icon-form"></span> Editar</a>
 	</div>
 </div>

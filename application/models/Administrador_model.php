@@ -73,7 +73,7 @@
 			$data = array(
 				'email' => $email,
 				'token' => $token,
-				'criado_em' => date('d/m/Y H:i:s')
+				'criado_em' => date('Y-m-d H:i:s')
 			);
 
 			return $this->db->insert($this->table_resetpass, $data);

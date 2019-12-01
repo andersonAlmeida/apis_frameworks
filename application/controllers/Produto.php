@@ -77,9 +77,9 @@ class Produto extends CI_Controller
 			$this->load->library('upload', $config);
 			// fim da configuração de upload
 
+			// die();
+
 			if (!$this->upload->do_upload('imagem')) {
-				// var_dump($this->upload->data());
-				// die();
 				$error = array('error' => $this->upload->display_errors());
 
 				$this->load->view('templates/header', $data);
@@ -89,6 +89,7 @@ class Produto extends CI_Controller
 				$uploaded = $this->upload->data('file_name');
 
 				$this->produto_model->update_produto($id, $uploaded);
+
 				$this->load->view('templates/header', $data);
 				$this->load->view('produto/success');
 				$this->load->view('templates/footer');
