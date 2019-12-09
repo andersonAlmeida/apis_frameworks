@@ -82,7 +82,7 @@ $db['default'] = array(
 	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=apis_e_frameworks_2019-2-n',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'postgres',
+	'password' => 'postgresql',
 	'database' => 'apis_e_frameworks_2019-2-n',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
